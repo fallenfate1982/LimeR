@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+       <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+       --> 
+        
+        <script>
+            var meta = document.createElement("meta");
+            meta.setAttribute('name', 'viewport');
+            meta.setAttribute('content', 'initial-scale=' + (1 / window.devicePixelRatio) + ',user-scalable=no');
+            document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+
+        <link type="text/css" href ="css/index.css" rel ="stylesheet" />
+
+        <script type="text/javascript" src="js/webworks.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/geo.js"></script>
+
+        <title>Lime Radar</title>
+        
+        <script type="text/javascript">
+
+            document.addEventListener("deviceready", runner, false);
+            
+
+         
+        </script>
+    </head>
+    <body>
+        
+        <div id="debugInfo" class ="ui-bar ui-bar-d debugInfo">
+            <input  data-inline="true"  type ="button" value ="Change Device ID" onclick ="ChangeDeviceID();" />
+            <input  data-inline="true"  type ="button" value ="Force Get Last Information" onclick ="getLastInfo();" /><br />
+            <label id="lblDeviceId" >Device ID</label><br />
+            <label id="lblLasPos" >Device ID</label><br />
+            <label id="lblLasSucc" >Device ID</label>
+        </div>
+        
+        <div  data-role="header" data-theme="a" class="center-wrapper">
+            <h1>Lime Radar</h1>
+            <span id="lblStatus">Online -</span><span id="lblFriends"> 4 Friends</span><br />
+            <input  data-theme="e"  data-inline="true"  data-corners="false" type ="button" value ="Check-In" onclick ="force();" />
+            <input data-theme="c" data-inline="true"  data-corners="false" type ="button" value ="Debug Info" onclick ="showDebug();" />
+            <input  data-theme="c" data-inline="true"  data-corners="false" type ="button" value ="Settings" onclick ="showSettings();" />
+            <input  data-theme="b" data-inline="true"  data-corners="false" type ="button" value ="About" onclick ="showAbout();" /><br />
+
+            <select id="selVibe">
+                <option value="0">What's your vibe? - Radar Off</option>
+                <option value="1">Got some time, what's the plan?</option>
+                <option value ="2">Up for anything!</option>
+                <option value ="3">Feeling for a beer</option>
+                <option value="4">Party Time!</option>
+            </select>
+            <br />
+        </div>
+
+        <div id="settings" class="ui-bar ui-bar-b settings">
+            <input  data-inline="true"  type ="button" value ="Change Proximity" onclick ="ChangeDistance();" />
+            
+        </div>
+
+
+        <div id="errors">
+        
+        </div>
+        <div id="contTrackers"></div>
+        
+        <div id="aboutBox" class ="about center-wrapper" >
+            <div class ="aboutHeader"></div>
+            <div class ="aboutText">
+                This is the 1st beta testing version of Lime Radar. This is not for distribution or sale, please send all feedback on this app to limeradar@auratechtt.com!
+                Thanks!
+            </div> <div class="builtby"></div>
+            <a onclick="hideAbout();" href="#" class="buttonAboutOk">Ok</a>
+        </div>
+      
+    </body>
+</html>

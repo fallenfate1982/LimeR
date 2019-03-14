@@ -1,0 +1,782 @@
+
+
+  body {
+                padding: 0;
+                margin: 0;
+                background: #fff;
+
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-text-size-adjust: none;
+                color: #333;
+                font-family: helvetica;
+                font-size: 12px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2em;
+                padding: 20px 0;
+                margin: 0;
+            }
+
+            .swipeview {
+                width: 100%;
+                min-width: 100%;
+                height: 150px;
+                background: #ddd;
+                border-top: 1px solid #aaa;
+                border-bottom: 1px solid #aaa;
+            }
+			
+			
+
+            #nav {
+                position: absolute;
+                z-index: 100;
+                top: 8px;
+                width: 200px;
+                height: 20px;
+                left: 50%;
+                background: rgba(0,0,0,0.75);
+                padding: 0;
+                margin: 0 0 0 -100px;
+                border-radius: 10px;
+            }
+
+            #nav li {
+                display: block;
+                float: left;
+                width: 14px;
+                height: 14px;
+                line-height: 14px;
+                border-radius: 7px;
+                background: rgba(255,255,255,0.1);
+                overflow: auto;
+                padding: 0;
+                margin: 3px 11px 0 0;
+                text-align: center;
+            }
+
+            #nav li#prev {
+                margin-left: 5px;
+                background: transparent;
+            }
+
+            #nav li#next {
+                margin-right: 0;
+                background: transparent;
+            }
+
+            #nav li.selected {
+                background: rgba(255,255,255,0.4);
+            }
+
+            #swipeview-slider > div {
+                position: relative;
+
+                -moz-box-orient: vertical;
+                -ms-box-orient: vertical;
+                box-orient: vertical;
+
+                -webkit-box-pack: center;
+                -moz-box-pack: center;
+                -ms-box-pack: center;
+                box-pack: center;
+
+                -webkit-box-align: center;
+                -moz-box-align: center;
+                -ms-box-align: center;
+                box-align: center;
+                overflow: auto;
+            }
+
+            #swipeview-slider span {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box;
+                display: block;
+                text-align: center;
+                font-size: 1.4em;
+                padding: 0 20px;
+            }
+
+            p {
+                padding: 20px;
+                margin: 0;
+                font-size: 1.4em;
+            }
+
+.scrollable{
+	background-color:#CCC;
+	border:2px solid #777;
+	height:150px;
+	overflow:auto; /*This is what causes the problem on touchscreen devices*/
+	padding:5px;
+}
+
+#people{
+	margin-top:70px;
+}
+
+#onRadarMsg{
+	display:none;
+}
+
+#offRadarMsg{
+	margin-top: 55%;
+	display:none;
+}
+
+#onRadarMsg1{
+	display:none;
+}
+
+#LimerHead{
+	background-image:url(img/LimerHead.png);
+	background-size:80px 20px;
+	width:80px;
+	height:20px;
+	float:left;
+	
+}
+
+#header{
+	background-image:url(img/header);
+	background-size:cover;
+	background-repeat:no-repeat;
+	width:100%;
+	height:55px;
+	position:fixed;
+	top:16px;
+	left:0px;
+	overflow:hidden;
+
+}
+
+.centerWrapper{
+	width:160px;
+	height:30px;
+	margin:0 auto;
+}
+
+#stat{
+	width: 55px;
+float: right;
+font-size: 10px;
+}
+
+h1 {
+font-size: 2em;
+margin: 0;
+padding: 0px 0;
+}
+
+#debugConsole{
+	
+	
+}
+
+/* contact style */
+
+.contact-head{
+	background-image:url(img/contact-bg.png);
+	width:100%;
+	height:58px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.contact-body{
+	background-image:url(img/contact-body.png);
+	width:100%;
+	height:111px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+	padding-top: 5px;
+	
+}
+
+.person{
+	margin-bottom:30px;
+}
+
+.profilePic{
+	background-image:url(img/defaultpic.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	float: left;
+	margin-top: 6px;
+	margin-left: 12px;
+	width:55px;
+	height:55px;
+}
+
+.name{
+	width:128px;
+	height: 50px;
+	font-family:Chunkfive;
+	float: left;
+	font-size: 25px;
+	color :white;
+	margin-left: 5px;
+	margin-top:6px;
+	text-align: center;
+	overflow: hidden;
+	text-shadow:1px 1px 1px black;
+	
+}
+
+.sms{
+	background-image:url(img/sms.png);
+	background-size: contain;
+	background-repeat:no-repeat; 
+	background-position: center;
+	margin-top: 2px;
+	margin-right: 5px;
+	float: right;
+	width:55px;
+	height:55px;
+}
+
+.call{
+	background-image:url(img/call.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-top: 5px;
+	margin-right: 10px;
+	float: right;
+	width:50px;
+	height:50px;
+}
+
+@font-face {
+	font-family: Chunkfive;
+	src:url(Chunkfive.otf);
+}
+
+
+.dist-num{
+	font-family:Chunkfive;
+	width: 80%;
+	font-size: 85px;
+	color :white;
+	overflow: hidden;
+	padding-top: 2px;
+	height: 80px;
+	text-shadow:1px 1px 1px black;
+}
+
+.dist-measurement{
+	background-image:url(img/kmaway.png);
+	background-size: contain;
+	background-position:center;
+	background-repeat: no-repeat;
+	width: 90px;
+	height: 20px;
+
+}
+
+.dist{
+	width:100px;
+	float:right ;
+}
+
+.vibe{
+	background-size: contain;
+	background-position:center;
+	background-repeat: no-repeat;
+	/* float: right; */
+	width:105px;
+	height:105px;
+}
+
+.checkin{
+	background-image:url(img/checkintime.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width:115px;
+	height:115px;
+	float: right;
+}
+
+.hoursago{
+	
+	font-family:Chunkfive;
+	width: 100%;
+	font-size: 75px;
+	color :white;
+	overflow: hidden;
+	padding-top: 20px;
+	text-shadow:1px 1px 1px black;
+}
+
+
+.about{
+	display:none;
+}
+
+/* Registration */
+
+.reg-head{
+	font-size:25px;
+	font-family:Chunkfive;
+	color:#FFF;
+	background-image:url(img/contact-bg.png);
+	width:100%;
+	height:58px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+.reg-head div{
+	margin-top: 15px;
+	margin-left: 40px;
+	float: left;
+}
+
+.reg-body{
+	background-image:url(img/reg-body-bg.png);
+	width:100%;
+	height:215px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+	padding-top: 5px;
+	font-size:15px;
+	font-family:Chunkfive;
+	color:white;
+}
+
+.reg-body h1{
+	font-size:21px;
+	font-family:Chunkfive;
+}
+
+.reg-body2{
+	background-image:url(img/contact-body.png);
+	width:100%;
+	height:111px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+	padding-top: 5px;
+	font-size:15px;
+	font-family:Chunkfive;
+	color:white;
+}
+
+.reg-body2 h1{
+	font-size:21px;
+	font-family:Chunkfive;
+}
+
+#Registration{
+	margin-top:70px;
+	display:none;
+}
+
+.getPinBtn{
+	border:solid white 2px;
+	width: 70px;
+	height: 20px;
+	padding-top: 10px;
+	margin: 0 auto;
+	margin-top: 10px;	
+}
+
+.setPinBtn{
+	border:solid white 2px;
+	width: 70px;
+	height: 20px;
+	padding-top: 10px;
+	margin: 0 auto;
+	margin-top: 10px;	
+}
+
+/* Settings */
+.Settings-Head{
+		width:100%;
+	height:55px;
+	background-image:url(img/settinghead);
+	background-position:center;
+	background-size: 90%;
+	background-repeat: no-repeat;
+	margin-bottom: 20px;
+	margin-top:10px;
+}
+
+
+.settingsBtn{
+	background-image:url(img/settingbtn);
+	background-position:left;
+	width:100%;
+	height:100px;
+	background-size: 95% 100%;
+	background-repeat: no-repeat;
+	margin-bottom: 5px;
+	margin: 0 auto;
+}
+
+.status{
+	background-image:url(img/status.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:40%;
+	width:100%;
+	height:40px;
+	margin-top: 0px
+}
+
+.off{
+	background-image:url(img/off.png);
+	background-repeat:no-repeat;
+	background-position:left bottom;
+	background-size:40%;
+	width:75px;
+	height:100%;
+	position: relative;
+	top: -75px;
+	left: 20px
+}
+
+.friends{
+	background-image:url(img/friends.png);
+	background-repeat:no-repeat;
+	background-position:left bottom;
+	
+	background-size:90%;
+	width:75px;
+	height:100%;
+	position: relative;
+	top: -175px;
+	left: 80px
+}
+
+.public{
+	background-image:url(img/public);
+	background-repeat:no-repeat;
+	background-position:right bottom;
+	
+	background-size:70%;
+	width:75px;
+	height:100%;
+	position: relative;
+	top: -276px;
+	left: 150px
+}
+
+.slider{
+	background-image:url(img/slider.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+	width:70%;
+	height:25px;
+	margin: 0 auto;
+}
+
+.sliderbtn{
+	background-image:url(img/sliderhead);
+	background-repeat:no-repeat;
+	background-position:right;
+	background-size:contain;
+	width:25px;
+	height:25px;
+}
+
+.vibeBtn{
+	background-image:url(img/vibe.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:40%;
+	width:100%;
+	height:100px;
+	margin-top: 0px;
+}
+
+.aboutBtn{
+	background-image:url(img/about);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:60%;
+	width:100%;
+	height:100px;
+	margin-top: 0px;
+}
+
+.saveBtn{
+	background-image:url(img/saveBtn);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:60%;
+	width:100%;
+	height:100px;
+	margin-top: 0px;
+	
+}
+
+.profilebtn{
+	background-image:url(img/profile.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:50%;
+	width:100%;
+	height:100px;
+	margin-top: 0px;
+}
+
+.slide {
+	-webkit-transform: translateZ(0);
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: preserve-3d;
+	
+	-moz-transition: all .35s linear;
+	-webkit-transition: all .35s linear;
+	-o-transition: all .35s linear;
+	transition: all .35s linear;
+	
+	
+}
+
+.animateBtn {
+	-webkit-transform: translateZ(0);
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: preserve-3d;
+	
+	-moz-transition: all .25s linear;
+	-webkit-transition: all .25s linear;
+	-o-transition: all .25s linear;
+	transition: all .25s linear;
+	
+	
+}
+
+.setBtn{
+	background-image:url(img/settings);
+	background-repeat:no-repeat;
+	background-size:contain;
+	width:50px;
+	height:50px;
+	margin-top: 3px;
+	margin-left: 3px;
+}
+
+
+/* Select Vibes */
+
+#selVibe{
+	display:none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	overflow:scroll;
+}
+
+#editProfile{
+	display:none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+.popUpBack
+{
+	width:100%;
+	height:100%;
+	background-color:rgba(7, 38, 0, 0.85);
+	z-index: 0;
+	
+}
+
+.popUpBack2
+{
+	width:100%;
+	height:100%;
+	background-color:rgba(7, 38, 0, 0.85);
+	z-index: 0;
+	
+}
+
+.popUpBack3
+{
+	width:100%;
+	height:100%;
+	background-color:rgba(255, 255, 255,0.85);
+	z-index: 0;
+	
+}
+
+#aboutBox1{
+	display:none;
+}
+
+.popInner{
+	margin-top:15px;
+}
+
+.popInner2{
+	margin-top:15px;
+}
+
+.popInner3{
+	height:90%;
+}
+
+.popInner div{
+	float:left;
+	border-width:
+}
+
+
+.selVibe{
+	background-size: contain;
+	background-position:center;
+	background-repeat: no-repeat;
+	/* float: right; */
+	width:105px;
+	height:105px;
+	margin:20px;
+}
+.vbbq{
+	background-image:url(img/vibes/bbq.png);
+}
+
+.vbeers{
+	background-image:url(img/vibes/beers.png);
+}
+
+.vfishing{
+	background-image:url(img/vibes/fishin.png);
+}
+
+
+.vallNight{
+	background-image:url(img/vibes/allnight.png);
+}
+
+.vBatandBall{
+	background-image:url(img/vibes/batnball.png);
+}
+
+.vBeach{
+	background-image:url(img/vibes/beach.png);
+}
+
+.vCards{
+	background-image:url(img/vibes/cards.png);
+}
+
+.vCasino{
+	background-image:url(img/vibes/casino.png);
+}
+
+.vCook{
+	background-image:url(img/vibes/cook.png);
+}
+
+.vFete{
+	background-image:url(img/vibes/fete.png);
+}
+
+.vFood{
+	background-image:url(img/vibes/food.png);
+}
+
+.vGame{
+	background-image:url(img/vibes/game.png);
+}
+
+.vGirls{
+	background-image:url(img/vibes/girlslime.png);
+}
+
+.vMovies{
+	background-image:url(img/vibes/movies.png);
+}
+
+.vRiver{
+	background-image:url(img/vibes/river.png);
+}
+
+.vRum{
+	background-image:url(img/vibes/rum.png);
+}
+
+.vShopping{
+	background-image:url(img/vibes/shopping.png)
+}
+
+.vSweat{
+	background-image:url(img/vibes/sweat.png);
+}
+
+
+/* Fade Stuff */
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+ 
+ .fade-out {
+    opacity:1;  /* make things invisible upon start */
+    -webkit-animation:fadeOut ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -webkit-animation-duration:.5s;
+}
+
+ 
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -webkit-animation-duration:.5s;
+}
+
+.fade-in.one {
+-webkit-animation-delay: .25s;
+}
+
+
+.vibeSelected{
+	border:solid #FF7647 0px;
+	border-radius:15px;
+	background-color: #FF7647;
+}
+
+.logo{
+	background-image:url(img/Logo-flat.png);
+	width: 90%;
+	height: 90%;
+	background-position:center;
+	background-size: 100%;
+	background-repeat:no-repeat;
+	margin: 0 auto;
+}
+
+.aboutText{
+	padding: 10px;
+font-weight:bolder;
+}
+
+.txtSelVibe{
+	padding: 20px;
+margin: 0;
+font-size: 2.4em;
+color:white;
+font-family:Chunkfive;
+}

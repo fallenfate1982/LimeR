@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>Sliding View Sample</title>
+    	<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+        
+	<script>
+            var meta = document.createElement("meta");
+            meta.setAttribute('name', 'viewport');
+            meta.setAttribute('content', 'initial-scale=' + (1 ) + ',user-scalable=no');
+            document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+    
+
+		<script type="text/javascript" src="js/webworks.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        
+    	<script src="src/libs/jquery-1.7.1.js"></script>
+    	<script src="src/libs/jquery.animate-enhanced.js"></script>
+    	
+    	<link rel="stylesheet" href="src/slidingview/slidingview.css" type="text/css" />
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <!--<link type="text/css" href ="css/index.css" rel ="stylesheet" />-->
+        
+    	<script src="src/slidingview/slidingview.js"></script>
+    	<script type="text/javascript" src="swipeview.js"></script>
+		<script type="text/javascript" src="touchscroll.js"></script>
+        
+        
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/index-UI.js"></script>
+        <!--<script type="text/javascript" src="js/geo.js"></script>-->
+       
+
+		<script>
+		
+			document.addEventListener("deviceready", runner, false);
+                    
+			$(document).ready( function() {
+				
+				//Setup the ViewNavigator
+				new SlidingView( 'sidebar', 'body' );	
+				
+				loadLR();
+				
+				//////// User data to be put in slides
+				//var  slides = [
+//                        '<strong>Swipe</strong> to know more &gt;&gt;&gt;<br>Or scroll down for <em>Lorem Ipsum</em>',
+//                        '1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.',
+//                        '2. A robot must obey the orders given to it by human beings, except where such orders would conflict with the First Law.',
+//                        '3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.'
+//                    ];
+//					
+//					var  slides2 = [
+//                        '<strong>Do IT</strong> to know more &gt;&gt;&gt;<br>Or scroll down for <em>Lorem Ipsum</em>',
+//                        '1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.',
+//                        '2. A robot must obey the orders given to it by human beings, except where such orders would conflict with the First Law.',
+//                        '3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.'
+//                    ];
+					
+				//SlideThing('swipeview',slides);
+				
+				//SlideThing('swipeview1',slides2);
+				//SlideThing('swipeview3',slides2);
+				//SlideThing('swipeview4',slides);
+				
+				//addPerson("per1","Sheena Ramlochan",3,0.4,2);
+//				addPerson("per2","Anil Ramlochan",7,0.6,3);
+//				addPerson("per3","Shivan Gosine",2,2,2);
+//				addPerson("per4","Darryl Jones",1,1,1);
+//				
+//				
+				
+				
+				
+			});
+			
+			
+			
+		</script>
+		
+		<style>
+			#sidebar {
+				background-image:url(img/settings-bg.png);
+				background-size:cover;
+				background-repeat:no-repeat;
+				padding:10px;
+			}
+			#body {
+				background-image:url(img/background1);
+				background-size:cover;
+				background-repeat:no-repeat;
+				-webkit-overflow-scrolling:touch;
+			}
+		</style>
+
+	</head>
+	<body>
+	
+    <div class="slidingview_wrapper">
+        <div id="sidebar">
+        	<div class="Settings-Head"></div>
+            <div class="settingsBtn">
+            	<div class="status"></div>
+                <div class="slider">
+                	<div class="sliderbtn slide"></div>
+                </div>
+                
+                
+                <div class="off" ></div>
+                <div class="friends" ></div>
+                <div class="public" ></div>
+            
+            </div>
+            <div id="vibeBtnBack" class="settingsBtn animateBtn">
+            	<div class="vibeBtn"></div>
+            </div>
+            <div id="profileBtnBack" class="settingsBtn animateBtn">
+            	<div class="profilebtn"></div>
+            </div>
+            <div id="aboutBtnBack" class="settingsBtn animateBtn">
+            	<div class="aboutBtn"></div>
+            </div>
+                
+                
+                <div id = "debugConsole">
+                </div>   
+                <div id="errors">
+                
+                </div>
+        <!--Test Section here-->
+                <div id="aboutBox" class ="about center-wrapper" >
+                    <div class ="aboutHeader"></div>
+                        <div class ="aboutText">
+                       
+                            <!--This is the 1st beta testing version of Lime Radar. This is not for distribution or sale, please send all feedback on this app to limeradar@auratechtt.com!
+                            Thanks!-->
+                        </div> 
+                        <div class="builtby"></div>
+                        <a onclick="hideAbout();" href="#" class="buttonAboutOk">Ok</a>
+                </div>
+        </div>
+		
+        
+        <div id="body">    
+            <div id="header"> 
+            	<div class="setBtn"></div>
+            </div>
+            <div id="offRadarMsg" onClick="setOnline);">	
+                <p> You are currently Off the Radar</p>
+                <p> Tap here to Connect</p>
+            </div>
+            
+            <div id="Registration">
+                <div class ="reg-head"><div>Register this Device</div></div>
+                
+                <div class="reg-body2">
+                    <h1>1- Get verification PIN</h1>
+                    <div><label>Phone</label> <input id="phonenumber" type="text"/></div><br/>
+                    <div id="getPin" class="getPinBtn">Get Pin</div>
+                    
+                </div>
+                
+                <div class="reg-body">
+                    <h1>2- Enter Your information</h1>
+                    <div><label>First Name</label> <input id="fname" type="text"/></div><br/>
+                    <div><label>Last Name</label> <input id="lname" type="text"/></div><br/>
+                    <div><label>Enter PIN</label> <input id="pin" type="text"/></div><br/>
+                    <div id="setPin" class="setPinBtn">Register</div>
+                </div>
+            </div>
+            <div id="people"></div>
+        </div>
+    </div>
+	
+    
+    <div id = "selVibe" class="popUpBack fade-in one">
+    <p class="txtSelVibe">What are you up to or feeling like doing?</p>
+    	<div class="popInner">
+            <div id="v1" class="selVibe vbeers animateBtn"></div>
+            <div id="v2" class="selVibe vfishing animateBtn"></div>
+            <div id="v3" class="selVibe vbbq animateBtn"></div>
+            <div id="v4" class="selVibe vallNight animateBtn"></div>
+            <div id="v5" class="selVibe vBatandBall animateBtn"></div>
+            <div id="v6" class="selVibe vBeach animateBtn"></div>
+            <div id="v7" class="selVibe vCards animateBtn"></div>
+            <div id="v8" class="selVibe vCasino animateBtn"></div>
+            <div id="v9" class="selVibe vCook animateBtn"></div>
+            <div id="v10" class="selVibe vFete animateBtn"></div>
+            <div id="v11" class="selVibe vFood animateBtn"></div>
+            <div id="v12" class="selVibe vGame animateBtn"></div>
+            <div id="v13" class="selVibe vGirls animateBtn"></div>
+            <div id="v14" class="selVibe vMovies animateBtn"></div>
+            <div id="v15" class="selVibe vRiver animateBtn"></div>
+            <div id="v16" class="selVibe vRum animateBtn"></div>
+            <div id="v17" class="selVibe vShopping animateBtn"></div>
+            <div id="v18" class="selVibe vSweat animateBtn"></div>
+        </div>
+    </div>
+    
+    <div id= "editProfile" class="popUpBack2 fade-in one">
+        <div class="popInner2">
+            <div id="saveProfileBtnBack" class="settingsBtn animateBtn">
+            	<div class="saveBtn"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id= "aboutBox1" class="popUpBack3 fade-in one">
+        <div class="popInner3">
+            <div class="logo">
+            </div>
+            
+            <!--Test area-->
+            
+            <div class="aboutText">
+        
+            LimeR (The Lime Radar) is a product of Aura-Tech Solutions Limited. All Rights reserved. Aura-Tech Solutions is not liable for any misuse of this application. Please note that this is a Beta version of this application.
+            </div>
+        </div>
+    </div>
+    
+	</body>
+</html>
